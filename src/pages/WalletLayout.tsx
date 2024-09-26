@@ -5,7 +5,7 @@ import { HomePage } from './HomePage';
 import { SlidingForm } from '../components/SlidingForm';
 import { BottomNav } from '../components/BottomNav';
 import { Header } from '../components/Header';
-import { SIDE_MENU, Sidebar } from '../components/SideBar';
+import { SIDE_MENU, Sidebar } from '../components/Sidebar';
 
 export function WalletLayout() {
   const [isFormOpen, setIsFormOpen] = useState(false);

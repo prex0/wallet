@@ -2,7 +2,7 @@ import { UIPanel } from "@prex0/uikit";
 import { AiOutlineClose } from "react-icons/ai";
 import { SendForm } from "./SendForm";
 import { SwapForm } from "./SwapForm";
-import { SIDE_MENU } from "./SideBar";
+import { SIDE_MENU } from "./Sidebar";
 
 export const SlidingForm = ({ isOpen, menu, onClose }: { isOpen: boolean, menu: SIDE_MENU, onClose: () => void }) => {
   return (
