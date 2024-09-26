@@ -35,12 +35,12 @@ export function WalletLayout() {
         <Header />
         {/* HomePage component, hidden on mobile */}
         <div className='md:block hidden w-full'>
-          {breakpoint !== 'md' ? <HomePage /> : null}
+          {breakpoint !== 'sm' ? <HomePage /> : null}
         </div>
       </div>
     </div>
     {/* Router outlet for nested routes */}
-    {breakpoint === 'md' ? <Outlet /> : null}
+    {breakpoint === 'sm' ? <Outlet /> : null}
     {/* Sliding form component */}
     <SlidingForm isOpen={isFormOpen} menu={menu} onClose={() => {setIsFormOpen(false)}}/>
     {/* Bottom navigation component for mobile */}
