@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --mode dev --port 3000",
     "start:pro": "vite --mode pro --port 3000",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build --mode pro",
     "lint": "eslint .",
     "preview": "vite preview"
   },
