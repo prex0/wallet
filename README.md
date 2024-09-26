@@ -18,7 +18,7 @@ Prex Wallet is a modern, responsive cryptocurrency wallet built with **React**, 
 
 ## Live Demo
 
-[View Live Demo](#) *(Replace with actual link if available)*
+[View Live Demo](https://wallet.prex0.com)
 
 ## Getting Started
 
@@ -32,7 +32,7 @@ Prex Wallet is a modern, responsive cryptocurrency wallet built with **React**, 
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/your-username/prex-wallet.git
+   git clone https://github.com/prex0/prex-wallet.git
    cd prex-wallet
    ```
 
@@ -294,15 +294,3 @@ Contributions are welcome! Please follow these steps:
    ```
 
 5. **Open a Pull Request**
-
-## License
-
-[MIT](LICENSE)
-
-## Contact
-
-For any inquiries or support, please contact [your-email@example.com](mailto:your-email@example.com).
-
----
-
-*This project is powered by [@prex0/uikit](https://github.com/your-username/uikit).*
