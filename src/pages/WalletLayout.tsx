@@ -6,6 +6,7 @@ import { SlidingForm } from '../components/SlidingForm';
 import { BottomNav } from '../components/BottomNav';
 import { Header } from '../components/Header';
 import { SIDE_MENU, Sidebar } from '../components/Sidebar';
+import { useBreakpoints } from '@prex0/uikit';
 
 // WalletLayout component: Manages the layout of the wallet interface
 export function WalletLayout() {
@@ -24,6 +25,8 @@ export function WalletLayout() {
     }
   }, [isFormOpen, setIsFormOpen, setMenu])
 
+  const breakpoint = useBreakpoints();
+
   return <EmbeddedWallet title="Prex Wallet">
     <div className="flex">
       <Sidebar onSelectMenu={handleSelectMenu}/>
@@ -32,12 +35,12 @@ export function WalletLayout() {
         <Header />
         {/* HomePage component, hidden on mobile */}
         <div className='md:block hidden w-full'>
-          <HomePage />
+          {breakpoint !== 'md' ? <HomePage /> : null}
         </div>
       </div>
     </div>
     {/* Router outlet for nested routes */}
-    <Outlet />
+    {breakpoint === 'md' ? <Outlet /> : null}
     {/* Sliding form component */}
     <SlidingForm isOpen={isFormOpen} menu={menu} onClose={() => {setIsFormOpen(false)}}/>
     {/* Bottom navigation component for mobile */}

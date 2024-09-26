@@ -2,7 +2,7 @@ import {UILabel1} from '@prex0/uikit'
 import { TokenBalance } from '@prex0/uikit/identity';
 import { History, TransferHistory, TransferHistoryItemCustom, LinkTransferHistory, LinkTransferHistoryItemCustom,SwapHistory, SwapHistoryItemCustom } from '@prex0/uikit/history';
 import { USDC_TOKEN } from '../constants';
-import { SwapHistoryItemContent } from '../components/SwapHistoryItem';
+import { SwapHistoryItemContent } from '../components/history/SwapHistoryItem';
 import { useState } from 'react';
 import { cn, color } from '@prex0/uikit/styles';
 
@@ -54,27 +54,26 @@ export const HomePage = () => {
         </button>
       </div>
         {activeTab === HistoryTab.TRANSFER && (
-          <History transferHistoryEnabled={true} linkTransferHistoryEnabled={false} swapHistoryEnabled={false}>
+          <History transferHistoryEnabled>
             <TransferHistory>
               <TransferHistoryItemCustom/>
             </TransferHistory>
           </History>
         )}
         {activeTab === HistoryTab.LINK_TRANSFER && (
-          <History transferHistoryEnabled={false} linkTransferHistoryEnabled={true} swapHistoryEnabled={false}>
-
-          <LinkTransferHistory>
-            <LinkTransferHistoryItemCustom/>
-          </LinkTransferHistory>
+          <History linkTransferHistoryEnabled>
+            <LinkTransferHistory>
+              <LinkTransferHistoryItemCustom/>
+            </LinkTransferHistory>
           </History>
         )}
         {activeTab === HistoryTab.SWAP && (
-          <History transferHistoryEnabled={false} linkTransferHistoryEnabled={false} swapHistoryEnabled={true}>
-          <SwapHistory>
-            <SwapHistoryItemCustom>
-              <SwapHistoryItemContent />
-            </SwapHistoryItemCustom>
-          </SwapHistory>
+          <History swapHistoryEnabled>
+            <SwapHistory>
+              <SwapHistoryItemCustom>
+                <SwapHistoryItemContent />
+              </SwapHistoryItemCustom>
+            </SwapHistory>
           </History>
         )}
     </div>
