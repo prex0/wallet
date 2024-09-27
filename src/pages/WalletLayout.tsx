@@ -32,7 +32,7 @@ export function WalletLayout() {
         {/* Header component */}
         <Header />
         {/* HomePage component, hidden on mobile */}
-        <div className='md:block hidden w-full'>
+        <div className='sm:block hidden w-full'>
           {breakpoint !== 'sm' ? <HomePage /> : null}
         </div>
       </div>
