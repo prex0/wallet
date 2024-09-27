@@ -4,6 +4,7 @@ import { background, border, cn } from '@prex0/uikit/styles';
 import { BiSun, BiSolidMoon } from "react-icons/bi";
 import { MyAddressModal } from './MyAddressModal';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -11,7 +12,7 @@ export const Header = () => {
   return (
     <header className={cn(background.default, border.defaultActive, "flex justify-between items-center w-full h-16 px-4 border-b")}>
       <div className="flex items-center">
-        <UILabel1 className="text-xl font-bold">Logo</UILabel1>
+        <Link to="/"><UILabel1 className="text-xl font-bold">Logo</UILabel1></Link>
       </div>
       <div className="flex items-center space-x-4">
         <button className="px-3 py-2 rounded-md transition-colors" onClick={() => {setIsModalOpen(true)}}>

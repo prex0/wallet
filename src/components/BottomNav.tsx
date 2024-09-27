@@ -8,7 +8,7 @@ export const BottomNav = () => {
         <div className="flex flex-col items-center">
           <div className="text-xl" />
           <UILabel1>
-            <Link to="home">Home</Link>
+            <Link to="/">Home</Link>
           </UILabel1>
         </div>
         <div className="flex flex-col items-center">

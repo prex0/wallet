@@ -1,10 +1,12 @@
 import {UILabel1} from '@prex0/uikit'
 import { TokenBalance } from '@prex0/uikit/identity';
-import { History, TransferHistory, TransferHistoryItemCustom, LinkTransferHistory, LinkTransferHistoryItemCustom,SwapHistory, SwapHistoryItemCustom } from '@prex0/uikit/history';
+import { History, TransferHistory, LinkTransferHistory, SwapHistory, SwapHistoryItemCustom, TransferHistoryItemCustom, LinkTransferHistoryItemCustom } from '@prex0/uikit/history';
 import { USDC_TOKEN } from '../constants';
-import { SwapHistoryItemContent } from '../components/history/SwapHistoryItem';
+import { SwapHistoryItem } from '../components/history/SwapHistoryItem';
+import { LinkTransferHistoryItem } from '../components/history/LinkTransferHistoryItem';
 import { useState } from 'react';
 import { cn, color } from '@prex0/uikit/styles';
+import { TransferHistoryItemContent } from '../components/history/TransferHistoryItemContent';
 
 enum HistoryTab {
   TRANSFER = 'transfer',
@@ -56,14 +58,18 @@ export const HomePage = () => {
         {activeTab === HistoryTab.TRANSFER && (
           <History transferHistoryEnabled>
             <TransferHistory>
-              <TransferHistoryItemCustom/>
+              <TransferHistoryItemCustom>
+                <TransferHistoryItemContent/>
+              </TransferHistoryItemCustom>
             </TransferHistory>
           </History>
         )}
         {activeTab === HistoryTab.LINK_TRANSFER && (
-          <History linkTransferHistoryEnabled>
+          <History linkTransferHistoryEnabled token={USDC_TOKEN.address as `0x${string}`}>
             <LinkTransferHistory>
-              <LinkTransferHistoryItemCustom/>
+              <LinkTransferHistoryItemCustom>
+                <LinkTransferHistoryItem />
+              </LinkTransferHistoryItemCustom>
             </LinkTransferHistory>
           </History>
         )}
@@ -71,7 +77,7 @@ export const HomePage = () => {
           <History swapHistoryEnabled>
             <SwapHistory>
               <SwapHistoryItemCustom>
-                <SwapHistoryItemContent />
+                <SwapHistoryItem />
               </SwapHistoryItemCustom>
             </SwapHistory>
           </History>

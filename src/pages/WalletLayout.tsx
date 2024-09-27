@@ -1,6 +1,5 @@
 import { useCallback, useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import { EmbeddedWallet } from '@prex0/uikit/wallet';
 import { HomePage } from './HomePage';
 import { SlidingForm } from '../components/SlidingForm';
 import { BottomNav } from '../components/BottomNav';
@@ -27,8 +26,7 @@ export function WalletLayout() {
 
   const breakpoint = useBreakpoints();
 
-  return <EmbeddedWallet title="Prex Wallet">
-    <div className="flex">
+  return <div><div className="flex">
       <Sidebar onSelectMenu={handleSelectMenu}/>
       <div className='w-full'>
         {/* Header component */}
@@ -45,5 +43,5 @@ export function WalletLayout() {
     <SlidingForm isOpen={isFormOpen} menu={menu} onClose={() => {setIsFormOpen(false)}}/>
     {/* Bottom navigation component for mobile */}
     <BottomNav />
-  </EmbeddedWallet>
+  </div>
 }

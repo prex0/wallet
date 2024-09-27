@@ -4,14 +4,15 @@ import {
   LinkReceiveError,
   LinkReceiveSender,
   LinkReceiveStatus,
-  LinkReceiveButton
+  LinkReceiveShare
 } from '@prex0/uikit/link-receive'
-import { Header } from '../components/Header'
 import { UILabel1 } from '@prex0/uikit'
 import { useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { makeURL } from '../utils'
+import { cn, pressable, text } from '@prex0/uikit/styles'
 
-export const ReceivePage = () => {
+export const PendingPage = () => {
   const navigate = useNavigate()
 
   const handleSuccess = useCallback(() => {
@@ -20,8 +21,7 @@ export const ReceivePage = () => {
 
   return (
     <div className='p-4'>
-      <Header />
-      <div className='p-6 max-w-lg mx-auto space-y-4'>
+      <div className='p-6 max-w-lg mx-auto space-y-5'>
         <LinkReceive onSuccess={handleSuccess}>
           <div className='flex items-center justify-between'>
             <UILabel1>Amount:</UILabel1>
@@ -36,7 +36,9 @@ export const ReceivePage = () => {
             <LinkReceiveStatus />
           </div>
           <LinkReceiveError />
-          <LinkReceiveButton />
+          <LinkReceiveShare makeURL={makeURL} className='py-3'>
+            <button className={cn(pressable.inverse, text.label1, 'rounded-lg h-12 w-full')}>Share</button>
+          </LinkReceiveShare>
         </LinkReceive>
       </div>
     </div>

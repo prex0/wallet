@@ -2,7 +2,7 @@ import { formatUnits } from "viem"
 import { SwapHistoryItemCustomComponentReact } from "@prex0/uikit/history"
 import { getFormattedDate } from "../../utils/date"
 
-export const SwapHistoryItemContent = ({
+export const SwapHistoryItem = ({
   className,
   item,
   inputToken,
