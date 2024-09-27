@@ -15,7 +15,7 @@ export const ReceivePage = () => {
   const navigate = useNavigate()
 
   const handleSuccess = useCallback(() => {
-    navigate('/wallet')
+    navigate('/')
   }, [navigate])
 
   return (

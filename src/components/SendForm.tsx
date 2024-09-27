@@ -23,8 +23,8 @@ export const SendForm = () => {
         <LinkTransferError />
         {
           isSuccess ? (
-            <LinkTransferShare makeURL={makeURL}>
-              <button className={cn(pressable.inverse, text.label1, 'rounded-lg h-10')}>Share</button>
+            <LinkTransferShare makeURL={makeURL} className='px-3'>
+              <button className={cn(pressable.inverse, text.label1, 'rounded-lg w-full h-10')}>Share</button>
             </LinkTransferShare>  
           ):(
             <LinkTransferButton />
