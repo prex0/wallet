@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
+import { visualizer } from "rollup-plugin-visualizer";
 
 export default defineConfig({
   plugins: [
@@ -28,5 +29,15 @@ export default defineConfig({
         ]
       }
     })
-  ]
+  ],
+  build: {
+    rollupOptions: {
+      plugins: [react(), visualizer()],
+      output: {
+        manualChunks: {
+          vendor: ["react", "react-router-dom", "@prex0/uikit"]
+        },
+      },
+    },
+  },
 })
