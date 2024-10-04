@@ -9,7 +9,7 @@ export const SendForm = () => {
 
   return (
     <div className="p-0">
-      <LinkTransfer className="mt-4" token={USDC_TOKEN.address as `0x${string}`} amount='0' onSuccess={() => setIsSuccess(true)}>
+      <LinkTransfer className="mt-4" token={USDC_TOKEN.address as `0x${string}`} onSuccess={() => setIsSuccess(true)}>
         <div className='flex justify-end'>
           <LinkTransferTokenSelector />
         </div>
