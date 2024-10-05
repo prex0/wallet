@@ -10,23 +10,13 @@
     <title>Prex Wallet</title>
     <meta
       http-equiv="Content-Security-Policy"
-      content="style-src 'self'; script-src 'self'; connect-src 'self' https://api-v0.prex0.com;"
+      content="style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self'; connect-src 'self' https://api-v0.prex0.com;"
     />
+    <meta http-equiv="Content-Security-Policy" content="font-src 'self' https://fonts.gstatic.com" />
   </head>
   <body>
     <div id="root" style="width: 100%; height: 100%;"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js')
-            .then(registration => {
-              console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            }, err => {
-              console.log('ServiceWorker registration failed: ', err);
-            });
-        });
-      }
-    </script>
+    <script src="/load-sw.js"></script>
   </body>
 </html>
