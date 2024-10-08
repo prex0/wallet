@@ -17,8 +17,8 @@ export const appRoute = createBrowserRouter(
         <Route index element={<HomePage />} />
         <Route path="send" element={<SendPage />} />
         <Route path="swap" element={<SwapPage />} />
-        <Route path="pending" element={<PendingPage />} />
       </Route>
+      <Route path="pending" element={<PendingPage />} />
       <Route path="receive" element={<ReceivePage />} />
       <Route path="*" element={<NotFound />} />
     </Route>
