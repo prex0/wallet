@@ -11,7 +11,7 @@ export const LinkTransferHistoryItem = (props: LinkTransferHistoryItemCustomComp
 
   const recipientLink =
     item.secret && item.messageId
-      ? `${location.origin}/wallet/pending?id=${encodeURIComponent(
+      ? `${location.origin}/pending?id=${encodeURIComponent(
           item.messageId
         )}&s=${encodeURIComponent(item.secret)}`
       : undefined

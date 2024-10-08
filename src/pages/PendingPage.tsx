@@ -16,7 +16,7 @@ export const PendingPage = () => {
   const navigate = useNavigate()
 
   const handleSuccess = useCallback(() => {
-    navigate('/wallet')
+    navigate('/')
   }, [navigate])
 
   return (
