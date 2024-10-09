@@ -6,5 +6,5 @@ import { LinkTransferResponse } from "@prex0/uikit/link-transfer"
  * @returns The URL for a link transfer
  */
 export const makeURL = (linkTransferResponse: LinkTransferResponse) => {
-  return `${window.location.origin}/receive?id=${encodeURIComponent(linkTransferResponse.id)}&s=${encodeURIComponent(linkTransferResponse.secret)}`
+  return `${window.location.origin}/receive?id=${encodeURIComponent(linkTransferResponse.id)}&s=${encodeURIComponent(linkTransferResponse.secret)}&openExternalBrowser=1`
 }
