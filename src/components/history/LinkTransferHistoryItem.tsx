@@ -15,6 +15,17 @@ export const LinkTransferHistoryItem = (props: LinkTransferHistoryItemCustomComp
           item.messageId
         )}&s=${encodeURIComponent(item.secret)}`
       : undefined
+ 
+  if(item.status === 'CANCELLED') {
+    return (
+      <div>
+        <div className="flex justify-between">
+          <div>送付をキャンセルしました</div>
+          <div>{formatUnits(BigInt(item.amount), token.decimals)} {token.symbol}</div>
+        </div>
+      </div>
+    )
+  }
   
   if (item.recipient && item.recipientDisplayName) {
     return (
