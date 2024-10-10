@@ -20,7 +20,7 @@ export const LinkTransferHistoryItem = (props: LinkTransferHistoryItemCustomComp
     return (
       <div>
         <div className="flex justify-between">
-          <div>The transfer has been cancelled</div>
+          <div>送付をキャンセルしました</div>
           <div>{formatUnits(BigInt(item.amount), token.decimals)} {token.symbol}</div>
         </div>
       </div>
