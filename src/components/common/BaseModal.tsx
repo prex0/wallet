@@ -32,7 +32,7 @@ export const BaseModal = ({
         },
         content: {
           borderRadius: 8,
-          border: '1px solid #2A2F3B',
+          border: '1px solid #5A5F6B',
           height: height,
           width: '85%',
           maxWidth: '400px',

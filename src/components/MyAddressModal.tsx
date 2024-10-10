@@ -1,4 +1,5 @@
 import { Address, MyCode } from '@prex0/uikit/identity'
+import { LogoutWalletButton } from '@prex0/uikit/wallet'
 import { BaseModal } from './common/BaseModal'
 import { AiOutlineClose } from 'react-icons/ai'
 import { UILabel1, UILabel2 } from '@prex0/uikit'
@@ -11,7 +12,7 @@ export const MyAddressModal = ({
   onRequestClose: () => void
 }) => {
   return (
-    <BaseModal isOpen={isOpen} onRequestClose={onRequestClose}>
+    <BaseModal isOpen={isOpen} onRequestClose={onRequestClose} height={430}>
 			<div className='p-6 flex justify-between items-center'>
 				<UILabel1>My Address</UILabel1>
 				<div className="cursor-pointer">
@@ -33,6 +34,9 @@ export const MyAddressModal = ({
           <UILabel2>
 						Arbitrumチェーンに対応しています。
           </UILabel2>
+          <LogoutWalletButton buttonText='Logout' onSuccess={() => {
+            location.reload()
+          }}/>
         </div>
       </div>
     </BaseModal>
