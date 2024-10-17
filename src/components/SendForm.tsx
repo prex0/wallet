@@ -1,4 +1,4 @@
-import { LinkTransfer, LinkTransferAmountInput, LinkTransferButton, LinkTransferError, LinkTransferTokenSelector, LinkTransferShare, LinkTransferCode } from '@prex0/uikit/link-transfer';
+import { LinkTransfer, LinkTransferAmountInput, LinkTransferButton, LinkTransferError, LinkTransferTokenSelector, LinkTransferShare } from '@prex0/uikit/link-transfer';
 import { makeURL } from '../utils/make-url';
 import { cn, pressable, text } from '@prex0/uikit/styles';
 import { useState } from 'react';
