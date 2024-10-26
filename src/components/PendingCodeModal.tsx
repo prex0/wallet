@@ -1,4 +1,4 @@
-import { LinkReceiveCode } from '@prex0/uikit/link-receive'
+import { LinkReceiveCode } from '@prex0/uikit/link-transfer'
 import { BaseModal } from './common/BaseModal'
 import { AiOutlineClose } from 'react-icons/ai'
 import { UILabel1, UILabel2 } from '@prex0/uikit'

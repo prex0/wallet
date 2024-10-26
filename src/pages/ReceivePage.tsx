@@ -5,7 +5,7 @@ import {
   LinkReceiveSender,
   LinkReceiveStatus,
   LinkReceiveButton
-} from '@prex0/uikit/link-receive'
+} from '@prex0/uikit/link-transfer'
 import { Header } from '../components/Header'
 import { UILabel1 } from '@prex0/uikit'
 import { useCallback } from 'react'

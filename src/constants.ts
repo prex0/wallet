@@ -23,7 +23,7 @@ export const DEMO_TOKEN: Token = {
 };
 
 export const USDC_TOKEN: Token = MODE === 'dev' ? DEMO_TOKEN : {
-  name: 'USDC',
+  name: '',
   address: '0xaf88d065e77c8cC2239327C5EDb3A432268e5831',
   symbol: 'USDC',
   decimals: 6,
@@ -34,7 +34,7 @@ export const USDC_TOKEN: Token = MODE === 'dev' ? DEMO_TOKEN : {
 };
 
 export const WETH_TOKEN: Token = {
-  name: 'Wrapped Ether',
+  name: '',
   address: '0x82aF49447D8a07e3bd95BD0d56f35241523fBab1',
   symbol: 'WETH',
   decimals: 18,

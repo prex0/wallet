@@ -1,6 +1,7 @@
 import { TransferHistoryItemCustomComponentReact } from "@prex0/uikit/history"
 import { formatUnits, isAddressEqual } from "viem"
 import { getFormattedDate } from "../../utils"
+import { cn } from "@prex0/uikit/styles"
 
 export const TransferHistoryItemContent = ({
   className,
@@ -15,16 +16,16 @@ export const TransferHistoryItemContent = ({
   if (isAddressEqual(item.sender, me)) {
     return (
       <div className={className}>
-        <div className="flex justify-between">
-          <div>{item.recipientDisplayName}に送りました。</div>
-          <div>{formatUnits(BigInt(item.amount), token.decimals)} {token.symbol}</div>
-        </div>
-        <div className="flex justify-start">
+        <div className="flex justify-between items-center">
           <div>
-            <div className="text-xs text-zinc-500">
-              {getFormattedDate(item.createdAt)}
-            </div>
+            <div>Sent</div>
+            <div className={cn('text-zinc-500 text-xs md:text-sm')}>to {item.recipientDisplayName}</div>
           </div>
+
+          <div className="text-xs md:text-sm text-zinc-500">
+            {getFormattedDate(item.createdAt)}
+          </div>
+          <div className="text-base">{formatUnits(BigInt(item.amount), token.decimals)} {token.symbol}</div>
         </div>
       </div>
     )
@@ -32,15 +33,16 @@ export const TransferHistoryItemContent = ({
     return (
       <div className={className}>
         <div className="flex justify-between">
-          <div>{item.senderDisplayName}から受け取りました。</div>
-          <div>{formatUnits(BigInt(item.amount), token.decimals)} {token.symbol}</div>
-        </div>
-        <div className="flex justify-start">
           <div>
-            <div className="text-xs text-zinc-500">
-              {getFormattedDate(item.createdAt)}
-            </div>
+            <div>Received</div>
+            <div className={cn('text-zinc-500 text-xs md:text-sm')}>from {item.senderDisplayName}</div>
           </div>
+
+          <div className="text-xs md:text-sm text-zinc-500">
+            {getFormattedDate(item.createdAt)}
+          </div>
+
+          <div>{formatUnits(BigInt(item.amount), token.decimals)} {token.symbol}</div>
         </div>
       </div>
     )

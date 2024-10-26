@@ -5,7 +5,7 @@ import {
   LinkReceiveSender,
   LinkReceiveStatus,
   LinkReceiveShare
-} from '@prex0/uikit/link-receive'
+} from '@prex0/uikit/link-transfer'
 import { UILabel1 } from '@prex0/uikit'
 import { useCallback, useState } from 'react'
 import { useNavigate } from 'react-router-dom'

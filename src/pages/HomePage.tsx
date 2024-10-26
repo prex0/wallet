@@ -1,11 +1,11 @@
-import {UILabel1} from '@prex0/uikit'
+import {UILabel1, UILabel2} from '@prex0/uikit'
 import { TokenBalance } from '@prex0/uikit/identity';
 import { History, TransferHistory, LinkTransferHistory, SwapHistory, SwapHistoryItemCustom, TransferHistoryItemCustom, LinkTransferHistoryItemCustom } from '@prex0/uikit/history';
 import { USDC_TOKEN } from '../constants';
 import { SwapHistoryItem } from '../components/history/SwapHistoryItem';
 import { LinkTransferHistoryItem } from '../components/history/LinkTransferHistoryItem';
 import { useState } from 'react';
-import { cn, color } from '@prex0/uikit/styles';
+import { border, cn, color } from '@prex0/uikit/styles';
 import { TransferHistoryItemContent } from '../components/history/TransferHistoryItemContent';
 
 enum HistoryTab {
@@ -21,12 +21,12 @@ export const HomePage = () => {
     <div>
       <UILabel1>Assets</UILabel1>
       <div>
-        <TokenBalance token={USDC_TOKEN}/>
+        <TokenBalance className='text-lg font-bold' token={USDC_TOKEN}/>
       </div>
     </div>
     <div>
       <UILabel1>History</UILabel1>
-      <div className="flex space-x-2 mb-2">
+      <div className={cn("flex space-x-2 mb-2")}>
         <button
           className={cn(
             'px-0 py-1 rounded',

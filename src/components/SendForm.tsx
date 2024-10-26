@@ -1,4 +1,4 @@
-import { LinkTransfer, LinkTransferAmountInput, LinkTransferButton, LinkTransferError, LinkTransferTokenSelector, LinkTransferShare } from '@prex0/uikit/link-transfer';
+import { LinkTransfer, LinkTransferAmountInput, LinkTransferButton, LinkTransferError, LinkTransferTokenSimpleSelector, LinkTransferShare } from '@prex0/uikit/link-transfer';
 import { makeURL } from '../utils/make-url';
 import { cn, pressable, text } from '@prex0/uikit/styles';
 import { useState } from 'react';
@@ -13,7 +13,7 @@ export const SendForm = () => {
     <div className="p-0">
       <LinkTransfer className="mt-4" token={USDC_TOKEN.address as `0x${string}`} onSuccess={() => setIsSuccess(true)}>
         <div className='flex justify-end'>
-          <LinkTransferTokenSelector />
+          <LinkTransferTokenSimpleSelector imageSize={24} hideName/>
         </div>
         <div className="mb-4">
           <label className="block text-gray-700">Amount</label>
