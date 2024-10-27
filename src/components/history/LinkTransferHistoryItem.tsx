@@ -30,7 +30,7 @@ export const LinkTransferHistoryItem = (props: LinkTransferHistoryItemCustomComp
     return (
       <TableRow>
         <TableCell>
-          <div>Sent to <span className="text-xs text-muted-foreground">{item.recipientDisplayName}</span></div>
+          <div className="text-sm">Sent to <span className="text-xs text-muted-foreground">{item.recipientDisplayName}</span></div>
         </TableCell>
         <TableCell>
           <div>
@@ -39,7 +39,7 @@ export const LinkTransferHistoryItem = (props: LinkTransferHistoryItemCustomComp
             </div>
           </div>
         </TableCell>
-        <TableCell className="text-nowrap">
+        <TableCell className="text-sm text-nowrap">
           <div>{formatUnits(BigInt(item.amount), token.decimals)} {token.symbol}</div>
         </TableCell>
 

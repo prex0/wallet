@@ -18,8 +18,8 @@ export const TransferHistoryItemContent = ({
     return (
       <TableRow className={className}>
           <TableCell>
-            <div>Sent</div>
-            <div className={cn('text-zinc-500 text-xs md:text-sm')}>to {item.recipientDisplayName}</div>
+            <div>Sent to</div>
+            <div className={cn('text-zinc-500 text-xs md:text-sm')}>{item.recipientDisplayName}</div>
           </TableCell>
 
           <TableCell className="text-xs md:text-sm text-zinc-500">
@@ -32,8 +32,8 @@ export const TransferHistoryItemContent = ({
     return (
       <TableRow className={className}>
           <TableCell>
-            <div>Received</div>
-            <div className={cn('text-zinc-500 text-xs md:text-sm')}>from {item.senderDisplayName}</div>
+            <div>Received from</div>
+            <div className={cn('text-zinc-500 text-xs md:text-sm')}>{item.senderDisplayName}</div>
           </TableCell>
 
           <TableCell className="text-xs md:text-sm text-zinc-500">

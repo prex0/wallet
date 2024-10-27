@@ -5,11 +5,11 @@ import { USDC_TOKEN } from '../constants';
 import { SendCodeModal } from './SendCodeModal';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
-import { useAmountFormContext } from '@prex0/uikit';
+import { AmountFormInput, AmountFormMaxButton } from '@prex0/uikit';
 import { Label } from './ui/label';
-import { cn } from '../lib/utils';
 import { Token } from '@prex0/prex-client';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Spinner } from './common/Spinner';
 
 export const SendForm = () => {
   const [isSuccess, setIsSuccess] = useState(false);
@@ -30,7 +30,14 @@ export const SendForm = () => {
           <Label >Amount</Label>
           <LinkTransferAmountForm
           >
-            <CustomInput/>
+            <div className='flex gap-2 h-8'>
+              <AmountFormInput>
+                <Input className='h-full' type='number'/>
+              </AmountFormInput>
+              <AmountFormMaxButton>
+                <Button variant='outline' size='sm' className='w-12 h-full'>Max</Button>
+              </AmountFormMaxButton>
+            </div>
           </LinkTransferAmountForm>
         </div>
         <LinkTransferError className='text-muted-foreground'/>
@@ -43,7 +50,11 @@ export const SendForm = () => {
               <SendCodeModal />
             </div>
           ):(
-            <LinkTransferButton className='bg-primary text-primary-foreground shadow hover:bg-primary/90' text='Create Link'/ >
+            <LinkTransferButton className='bg-primary text-primary-foreground shadow hover:bg-primary/90' >
+              <CustomButton>
+                Create Link
+              </CustomButton>
+            </LinkTransferButton>
           )
         }
      
@@ -52,17 +63,8 @@ export const SendForm = () => {
   );
 };
 
-function CustomInput() {
-  const {amount, updateAmount, balance} = useAmountFormContext()
-
-  const isInvalid = Number(amount) > Number(balance)
-
-  return (
-    <div className='flex gap-2'>
-      <Input value={amount} onChange={(e) => updateAmount(e.target.value)} className={cn('h-8', isInvalid ? 'border-red-500' : '')}/>
-      <Button variant='outline' size='sm' className='w-12 h-8' onClick={() => updateAmount(balance ?? '0')}>Max</Button>
-    </div>
-  )
+function CustomButton({disabled, isLoading, onClick, children}: {disabled?: boolean, isLoading?: boolean, onClick?: () => void, children: React.ReactNode}) {
+  return <Button disabled={disabled} onClick={onClick}>{isLoading ? <Spinner /> : children}</Button>
 }
 
 function TokenSelector({
