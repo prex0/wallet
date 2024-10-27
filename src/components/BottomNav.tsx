@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export const BottomNav = () => {
   return (
-    <div className="fixed bottom-0 left-0 w-full md:hidden border-t">
+    <div className="fixed bottom-0 left-0 w-full bg-background md:hidden border-t">
       <nav className="flex justify-around py-0">
         <div className="flex flex-col items-center">
             <Link to="/">
