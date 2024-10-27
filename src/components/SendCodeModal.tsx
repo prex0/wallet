@@ -1,36 +1,39 @@
 import { LinkTransferCode } from '@prex0/uikit/link-transfer'
-import { BaseModal } from './common/BaseModal'
-import { AiOutlineClose } from 'react-icons/ai'
-import { UILabel1, UILabel2 } from '@prex0/uikit'
 import { makeURL } from '../utils'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogClose
+} from "@/components/ui/dialog"
+import { Button } from './ui/button'
 
-export const SendCodeModal = ({
-  isOpen,
-  onRequestClose,
-}: {
-  isOpen: boolean
-  onRequestClose: () => void
-}) => {
+export const SendCodeModal = () => {
   return (
-    <BaseModal isOpen={isOpen} onRequestClose={onRequestClose}>
-			<div className='p-6 flex justify-between items-center'>
-        <UILabel1>Link Transfer Code</UILabel1>
-        <div className="cursor-pointer">
-					<AiOutlineClose
-						className="w-8 h-8 text-zinc-800"
-						onClick={onRequestClose}
-					/>
-				</div>
-			</div>
-
-      <div className="mt-1 flex justify-center items-center">
-        <div className='space-y-2'>
-          <UILabel2 className='text-center'>Please scan this code</UILabel2>
-					<div className="flex justify-center items-center">
-            <LinkTransferCode makeURL={makeURL} className='px-3' />
-					</div>
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="outline">Show Code</Button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[425px]">
+        <DialogHeader>
+          <DialogTitle>Link Transfer Code</DialogTitle>
+          <DialogDescription>
+            Please scan this code
+          </DialogDescription>
+        </DialogHeader>
+        <div className='flex justify-center items-center'>
+          <LinkTransferCode makeURL={makeURL} className='px-3' />
         </div>
-      </div>
-    </BaseModal>
+        <DialogFooter>
+          <DialogClose>
+            <Button type="submit">Close</Button>
+          </DialogClose>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   )
 }

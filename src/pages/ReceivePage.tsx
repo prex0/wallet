@@ -36,7 +36,7 @@ export const ReceivePage = () => {
             <LinkReceiveStatus />
           </div>
           <LinkReceiveError />
-          <LinkReceiveButton />
+          <LinkReceiveButton className='bg-primary text-primary-foreground shadow hover:bg-primary/90'/>
         </LinkReceive>
       </div>
     </div>

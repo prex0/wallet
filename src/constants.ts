@@ -1,4 +1,4 @@
-import { Token } from "@prex0/uikit/token"
+import { Token } from "@prex0/prex-client"
 
 const MODE = import.meta.env.MODE
 
