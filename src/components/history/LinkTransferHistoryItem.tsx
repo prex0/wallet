@@ -19,12 +19,10 @@ export const LinkTransferHistoryItem = (props: LinkTransferHistoryItemCustomComp
  
   if(item.status === 'CANCELLED') {
     return (
-      <div>
-        <div className="flex justify-between">
-          <div>送付をキャンセルしました</div>
-          <div>{formatUnits(BigInt(item.amount), token.decimals)} {token.symbol}</div>
-        </div>
-      </div>
+      <TableRow>
+        <TableCell>送付をキャンセルしました</TableCell>
+        <TableCell className="text-nowrap">{formatUnits(BigInt(item.amount), token.decimals)} {token.symbol}</TableCell>
+      </TableRow>
     )
   }
   
