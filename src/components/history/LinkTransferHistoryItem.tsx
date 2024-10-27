@@ -1,6 +1,7 @@
 import { formatUnits } from "viem"
 import { getFormattedDate } from "../../utils"
 import { LinkTransferHistoryItemCustomComponentReact } from "@prex0/uikit/history";
+import { TableCell, TableRow } from "../ui/table"
 
 export const LinkTransferHistoryItem = (props: LinkTransferHistoryItemCustomComponentReact) =>  {
   const { item, token } = props
@@ -29,46 +30,52 @@ export const LinkTransferHistoryItem = (props: LinkTransferHistoryItemCustomComp
   
   if (item.recipient && item.recipientDisplayName) {
     return (
-      <div>
-        <div className="flex justify-between">
-          <div>{item.recipientDisplayName}に送りました。</div>
-          <div>{formatUnits(BigInt(item.amount), token.decimals)} {token.symbol}</div>
-        </div>
-        <div className="flex justify-start">
+      <TableRow>
+        <TableCell>
+          <div>Sent to <span className="text-xs text-muted-foreground">{item.recipientDisplayName}</span></div>
+        </TableCell>
+        <TableCell>
           <div>
-            <div className="text-xs text-zinc-500">
+            <div className="text-xs text-muted-foreground">
               {getFormattedDate(item.createdAt)}
             </div>
           </div>
-        </div>
-      </div>
+        </TableCell>
+        <TableCell className="text-nowrap">
+          <div>{formatUnits(BigInt(item.amount), token.decimals)} {token.symbol}</div>
+        </TableCell>
+
+      </TableRow>
     )
   } else {
     return (
-      <div>
-        <div className="flex justify-between">
+      <TableRow>
+        <TableCell>
           <div>
             {recipientLink ? (
               <a
                 href={recipientLink}
                 className="text-blue-700 underline"
               >
-                送付しています
+                Sending...
               </a>
             ) : (
               '送付しています'
             )}
           </div>
-          <div>{formatUnits(BigInt(item.amount), token.decimals)} {token.symbol}</div>
-        </div>
-        <div className="flex justify-start">
+        </TableCell>
+        <TableCell>
           <div>
-            <div className="text-xs text-zinc-500">
+            <div className="text-xs text-muted-foreground">
               {getFormattedDate(item.createdAt)}
             </div>
           </div>
-        </div>
-      </div>
+        </TableCell>
+
+        <TableCell>
+          <div>{formatUnits(BigInt(item.amount), token.decimals)} {token.symbol}</div>
+        </TableCell>
+      </TableRow>
     )
   }
 }
