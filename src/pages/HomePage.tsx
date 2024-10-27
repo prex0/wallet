@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/tabs"
 
 export const HomePage = () => {
-  return <div className='mx-0 md:mx-1 mt-4 space-y-4'>
+  return <div className='mx-1 md:mx-4 mt-4 space-y-4'>
     <Card>
       <CardHeader>
         <CardTitle>Assets</CardTitle>
