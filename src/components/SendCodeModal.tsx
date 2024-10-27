@@ -29,9 +29,11 @@ export const SendCodeModal = () => {
           <LinkTransferCode makeURL={makeURL} className='px-3' />
         </div>
         <DialogFooter>
-          <DialogClose>
-            <Button type="submit">Close</Button>
+          <div className='w-full flex justify-center'>
+          <DialogClose >
+            <Button>Close</Button>
           </DialogClose>
+          </div>
         </DialogFooter>
       </DialogContent>
     </Dialog>
