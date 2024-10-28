@@ -4,18 +4,20 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 export function TokenSelector({
   token,
   setToken,
-  options
+  options,
+  disabled
 }: {
   token?: Token;
   setToken?: (token: Token) => void;
   options?: Token[];
+  disabled?: boolean;
 }) {
   if (!options || !setToken || !token) {
     return null;
   }
 
   return (
-    <Select value={token.symbol} onValueChange={(value) => setToken(options.find((t) => t.symbol === value)!)}>
+    <Select value={token.symbol} onValueChange={(value) => setToken(options.find((t) => t.symbol === value)!)} disabled={disabled}>
       <SelectTrigger className="w-full h-full">
         <SelectValue placeholder="Select token" />
       </SelectTrigger>

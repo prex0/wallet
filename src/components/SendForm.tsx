@@ -20,7 +20,7 @@ export const SendForm = () => {
           <Label>Token</Label>
           <div className="flex justify-end">
             <LinkTransferTokenSelector>
-              <TokenSelector />
+              <TokenSelector disabled/>
             </LinkTransferTokenSelector>
           </div>
         </div>
