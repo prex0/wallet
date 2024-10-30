@@ -1,6 +1,5 @@
 import { Swap, SwapAmountForm, SwapTokenSelector, SwapToggleButton, SwapButton, SwapMessage } from '@prex0/uikit/swap';
-import { USDC_TOKEN, WETH_TOKEN } from '../constants';
-import { AmountFormBalance, AmountFormInput, AmountFormMaxButton } from '@prex0/uikit';
+import { AmountFormBalance, AmountFormInput, AmountFormMaxButton, USDC_TOKEN_ARBITRUM, WETH_TOKEN_ARBITRUM } from '@prex0/uikit';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
 import { TokenSelector } from './common/TokenSelector';
@@ -23,7 +22,7 @@ export const SwapForm = () => {
             <div className='basis-1/3'>
               <SwapTokenSelector
                   type='from'
-                  token={USDC_TOKEN}
+                  token={USDC_TOKEN_ARBITRUM}
                 >
                 <TokenSelector />
               </SwapTokenSelector>
@@ -54,7 +53,7 @@ export const SwapForm = () => {
             <div className='basis-1/3'>
               <SwapTokenSelector
                 type='to'
-                token={WETH_TOKEN}
+                token={WETH_TOKEN_ARBITRUM}
               >
                 <TokenSelector />
               </SwapTokenSelector>
