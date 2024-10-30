@@ -25,7 +25,7 @@ export const PendingRequest = () => {
       <LinkReceive onSuccess={handleSuccess}>
         <div className='flex items-center justify-between'>
           <UILabel1>Amount:</UILabel1>
-          <LinkReceiveAmount className='text-lg'/>
+          <LinkReceiveAmount />
         </div>
         <div className='flex items-center justify-between'>
           <UILabel1>Sender:</UILabel1>

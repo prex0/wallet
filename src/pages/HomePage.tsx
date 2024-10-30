@@ -1,6 +1,5 @@
 import { TokenBalance } from '@prex0/uikit/identity';
-import { History, TransferHistory, LinkTransferHistory, SwapHistory, SwapHistoryItemCustom, TransferHistoryItemCustom, LinkTransferHistoryItemCustom } from '@prex0/uikit/history';
-import { USDC_TOKEN } from '../constants';
+import { TransferHistory, LinkTransferHistory, SwapHistory, SwapHistoryItemCustom, TransferHistoryItemCustom, LinkTransferHistoryItemCustom, TransferHistoryItems, LinkTransferHistoryItems, SwapHistoryItems, TransferHistoryLoadMore } from '@prex0/uikit/history';
 import { SwapHistoryItem } from '../components/history/SwapHistoryItem';
 import { LinkTransferHistoryItem } from '../components/history/LinkTransferHistoryItem';
 import { TransferHistoryItemContent } from '../components/history/TransferHistoryItemContent';
@@ -12,6 +11,8 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs"
+import { USDC_TOKEN_ARBITRUM } from '@prex0/uikit';
+import { Button } from '../components/ui/button';
 
 export const HomePage = () => {
   return <div className='mx-1 md:mx-4 mt-4 space-y-4'>
@@ -20,7 +21,7 @@ export const HomePage = () => {
         <CardTitle>Assets</CardTitle>
       </CardHeader>
       <CardContent>
-        <TokenBalance className='text-lg font-bold' token={USDC_TOKEN}/>
+        <TokenBalance className='text-lg font-bold' token={USDC_TOKEN_ARBITRUM}/>
       </CardContent>
     </Card>
     <Card>
@@ -34,36 +35,41 @@ export const HomePage = () => {
           <TabsTrigger value="linkTransfer">Link Transfer</TabsTrigger>
           <TabsTrigger value="swap">Swap</TabsTrigger>
         </TabsList>
-        <TabsContent value="transfer">
-          <History transferHistoryEnabled className='w-full'>
+        <TabsContent value="transfer" className='mb-10'>
+          <TransferHistory pageSize={5}>
             <Table>
               <TableBody>
-                <TransferHistory className='w-full'>
+                <TransferHistoryItems>
                   <TransferHistoryItemCustom className='w-full'>
                     <TransferHistoryItemContent className='w-full'/>
                   </TransferHistoryItemCustom>
-                </TransferHistory>
-                </TableBody>
+                </TransferHistoryItems>
+              </TableBody>
             </Table>
-          </History>
+            <div className='flex justify-center'>
+              <TransferHistoryLoadMore>
+                <Button variant='outline' size='sm'>Load more</Button>
+              </TransferHistoryLoadMore>
+            </div>
+          </TransferHistory>
         </TabsContent>
         <TabsContent value="linkTransfer">
-          <History linkTransferHistoryEnabled token={USDC_TOKEN.address as `0x${string}`}>
             <LinkTransferHistory>
-              <LinkTransferHistoryItemCustom>
-                <LinkTransferHistoryItem />
-              </LinkTransferHistoryItemCustom>
+              <LinkTransferHistoryItems>
+                <LinkTransferHistoryItemCustom>
+                  <LinkTransferHistoryItem />
+                </LinkTransferHistoryItemCustom>
+              </LinkTransferHistoryItems>
             </LinkTransferHistory>
-          </History>
         </TabsContent>
         <TabsContent value="swap">
-          <History swapHistoryEnabled>
-            <SwapHistory>
+          <SwapHistory>
+            <SwapHistoryItems>
               <SwapHistoryItemCustom>
                 <SwapHistoryItem />
               </SwapHistoryItemCustom>
-            </SwapHistory>
-          </History>
+            </SwapHistoryItems>
+          </SwapHistory>
         </TabsContent>
       </Tabs>
       </CardContent>
