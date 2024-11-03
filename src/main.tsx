@@ -19,3 +19,9 @@ createRoot(document.getElementById('root')!).render(
     </PrexUIKitProvider>
   </StrictMode>,
 )
+
+
+// prevent touch action on the page
+document.addEventListener('touchstart', function(event){
+  event.preventDefault();
+});
