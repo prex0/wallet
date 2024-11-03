@@ -2,7 +2,6 @@ import { LinkReceiveCode } from '@prex0/uikit/link-transfer'
 import { BaseModal } from './common/BaseModal'
 import { AiOutlineClose } from 'react-icons/ai'
 import { UILabel1, UILabel2 } from '@prex0/uikit'
-import { makeURL } from '../utils'
 
 export const PendingCodeModal = ({
   isOpen,
@@ -27,7 +26,7 @@ export const PendingCodeModal = ({
         <div className='space-y-2'>
           <UILabel2 className='text-center'>Please scan this code</UILabel2>
           <div className="flex justify-center items-center">
-            <LinkReceiveCode makeURL={makeURL} className='px-3' />
+            <LinkReceiveCode className='px-3' />
 					</div>
         </div>
       </div>

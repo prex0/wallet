@@ -20,7 +20,7 @@ export const LinkTransferHistoryItem = (props: LinkTransferHistoryItemCustomComp
   if(item.status === 'CANCELLED') {
     return (
       <TableRow>
-        <TableCell>送付をキャンセルしました</TableCell>
+        <TableCell>Cancelled</TableCell>
         <TableCell className="text-nowrap">{formatUnits(BigInt(item.amount), token.decimals)} {token.symbol}</TableCell>
       </TableRow>
     )
@@ -58,7 +58,7 @@ export const LinkTransferHistoryItem = (props: LinkTransferHistoryItemCustomComp
                 Sending...
               </a>
             ) : (
-              '送付しています'
+              'Sending...'
             )}
           </div>
         </TableCell>

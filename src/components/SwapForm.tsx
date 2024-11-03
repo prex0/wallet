@@ -29,8 +29,8 @@ export const SwapForm = () => {
             </div>
           </div>
           <div className='flex justify-between items-center gap-2 h-8'>
-            <AmountFormBalance />
-            <AmountFormMaxButton>
+            <AmountFormBalance showSymbol/>
+            <AmountFormMaxButton asChild>
               <Button variant='outline' size='sm' className='w-12 h-full'>Max</Button>
             </AmountFormMaxButton>
           </div>
@@ -60,9 +60,9 @@ export const SwapForm = () => {
             </div>
           </div>
           <div className='flex justify-between items-center gap-2 h-8'>
-            <AmountFormBalance />
+            <AmountFormBalance showSymbol/>
 
-            <AmountFormMaxButton>
+            <AmountFormMaxButton asChild>
               <Button variant='outline' size='sm' className='w-12 h-full'>Max</Button>
             </AmountFormMaxButton>
           </div>

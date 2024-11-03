@@ -1,5 +1,4 @@
 import { LinkTransferCode } from '@prex0/uikit/link-transfer'
-import { makeURL } from '../utils'
 import {
   Dialog,
   DialogContent,
@@ -26,7 +25,7 @@ export const SendCodeModal = () => {
           </DialogDescription>
         </DialogHeader>
         <div className='flex justify-center items-center'>
-          <LinkTransferCode makeURL={makeURL} className='px-3' />
+          <LinkTransferCode className='px-3' />
         </div>
         <DialogFooter>
           <div className='w-full flex justify-center'>

@@ -54,13 +54,17 @@ export const HomePage = () => {
           </TransferHistory>
         </TabsContent>
         <TabsContent value="linkTransfer">
-            <LinkTransferHistory>
-              <LinkTransferHistoryItems>
-                <LinkTransferHistoryItemCustom>
-                  <LinkTransferHistoryItem />
-                </LinkTransferHistoryItemCustom>
-              </LinkTransferHistoryItems>
-            </LinkTransferHistory>
+          <LinkTransferHistory>
+            <Table>
+              <TableBody>
+                <LinkTransferHistoryItems>
+                  <LinkTransferHistoryItemCustom>
+                    <LinkTransferHistoryItem />
+                  </LinkTransferHistoryItemCustom>
+                </LinkTransferHistoryItems>
+              </TableBody>
+            </Table>
+          </LinkTransferHistory>
         </TabsContent>
         <TabsContent value="swap">
           <SwapHistory>
