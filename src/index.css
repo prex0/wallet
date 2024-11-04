@@ -6,6 +6,10 @@ html, body {
   height: 100%;
 }
 
+html, css{
+  touch-action:none;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

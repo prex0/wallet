@@ -10,6 +10,7 @@ import { Header } from '../components/Header'
 import { UILabel1 } from '@prex0/uikit'
 import { useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { getURL } from '../utils'
 
 export const ReceivePage = () => {
   const navigate = useNavigate()
@@ -22,7 +23,7 @@ export const ReceivePage = () => {
     <div className='p-4'>
       <Header />
       <div className='p-6 max-w-lg mx-auto space-y-4'>
-        <LinkReceive onSuccess={handleSuccess}>
+        <LinkReceive onSuccess={handleSuccess} getURL={getURL}>
           <div className='flex items-center justify-between'>
             <UILabel1>Amount:</UILabel1>
             <LinkReceiveAmount/>

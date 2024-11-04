@@ -9,7 +9,6 @@ export const SwapHistoryItem = ({
   inputToken,
   outputToken
 }: SwapHistoryItemCustomComponentReact) => {
-  console.log(item, inputToken, outputToken)
   if(item === undefined || inputToken === undefined || outputToken === undefined) {
     return null;
   }
