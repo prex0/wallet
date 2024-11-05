@@ -1,9 +1,12 @@
 import { EmbeddedWallet, DevicePasskeySupport } from "@prex0/uikit/wallet";
 import { Outlet } from "react-router-dom";
+import { Toaster } from "@/components/ui/toaster"
+
 
 export function Layout() {
   return <DevicePasskeySupport notSupportedComponent={<NotSupported/>}><EmbeddedWallet title="Prex Wallet">
     <Outlet />
+    <Toaster />
   </EmbeddedWallet></DevicePasskeySupport>
 }
 
