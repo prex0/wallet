@@ -1,4 +1,4 @@
-import { RichTransferCard } from '@prex0/uikit/transfer';
+import { RichTransferCard } from './rich/RichTransferCard';
 import { getURL } from '../utils/make-url';
 import { USDC_TOKEN_ARBITRUM } from '@prex0/uikit';
 import { useToast } from "@/hooks/use-toast"

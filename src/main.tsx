@@ -5,7 +5,7 @@ import { USDC_TOKEN_ARBITRUM, WETH_TOKEN_ARBITRUM, ARB_TOKEN_ARBITRUM, PrexUIKit
 import '@prex0/uikit/styles.css';
 import './index.css'
 import { CHAIN_ID } from './constants.ts';
-
+import { en } from './utils/en';
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <PrexUIKitProvider
@@ -14,6 +14,12 @@ createRoot(document.getElementById('root')!).render(
       apiKey={import.meta.env.VITE_API_KEY}
       tokens={[USDC_TOKEN_ARBITRUM, WETH_TOKEN_ARBITRUM, WSTETH_TOKEN_ARBITRUM, ARB_TOKEN_ARBITRUM]}
       dryRun={import.meta.env.VITE_DRY_RUN === 'true'}
+      localization={{
+        defaultLocale: 'en',
+        variables: {
+          en: en,
+        },
+      }}
     >
       <App />
     </PrexUIKitProvider>

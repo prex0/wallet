@@ -1,35 +1,44 @@
 import { LinkReceiveCode } from '@prex0/uikit/link-transfer'
-import { BaseModal } from './common/BaseModal'
-import { AiOutlineClose } from 'react-icons/ai'
-import { UILabel1, UILabel2 } from '@prex0/uikit'
+import { UILabel2 } from '@prex0/uikit'
+import { Button } from "@/components/ui/button"
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 
-export const PendingCodeModal = ({
-  isOpen,
-  onRequestClose,
-}: {
-  isOpen: boolean
-  onRequestClose: () => void
-}) => {
+export const PendingCodeModal = () => {
   return (
-    <BaseModal isOpen={isOpen} onRequestClose={onRequestClose}>
-			<div className='p-6 flex justify-between items-center'>
-				<UILabel1>Link Transfer Code</UILabel1>
-				<div className="cursor-pointer">
-					<AiOutlineClose
-						className="w-8 h-8 text-zinc-800"
-						onClick={onRequestClose}
-					/>
-				</div>
-			</div>
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="outline">Show Code</Button>
+      </DialogTrigger>
+			<DialogContent>
+        <DialogHeader>
+          <DialogTitle>Link Transfer Code</DialogTitle>
+        </DialogHeader>
 
-      <div className="mt-1 flex justify-center items-center">
-        <div className='space-y-2'>
-          <UILabel2 className='text-center'>Please scan this code</UILabel2>
-          <div className="flex justify-center items-center">
-            <LinkReceiveCode className='px-3' />
-					</div>
+        <div className="mt-1 flex justify-center items-center">
+          <div className='space-y-2'>
+            <UILabel2 className='text-center'>Please scan this code</UILabel2>
+            <div className="flex justify-center items-center">
+              <LinkReceiveCode className='px-3' />
+            </div>
+          </div>
         </div>
-      </div>
-    </BaseModal>
+
+        <DialogFooter>
+          <DialogClose asChild>
+            <Button variant="secondary">
+              Close
+            </Button>
+          </DialogClose>
+        </DialogFooter>
+			</DialogContent>
+    </Dialog>
   )
 }

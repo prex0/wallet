@@ -4,13 +4,14 @@ import {
   LinkReceiveError,
   LinkReceiveSender,
   LinkReceiveStatus,
+  LinkReceiveExpiration,
   LinkReceiveButton
 } from '@prex0/uikit/link-transfer'
 import { Header } from '../components/Header'
 import { UILabel1 } from '@prex0/uikit'
 import { useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { getURL } from '../utils'
+import { getFormattedDate, getURL } from '../utils'
 
 export const ReceivePage = () => {
   const navigate = useNavigate()
@@ -35,6 +36,10 @@ export const ReceivePage = () => {
           <div className='flex items-center justify-between'>
             <UILabel1>Status:</UILabel1>
             <LinkReceiveStatus />
+          </div>
+          <div className='flex items-center justify-between'>
+            <UILabel1>Expiration:</UILabel1>
+            <LinkReceiveExpiration format={(timestamp) => getFormattedDate(timestamp)}/>
           </div>
           <LinkReceiveError />
           <LinkReceiveButton className='bg-primary text-primary-foreground shadow hover:bg-primary/90'/>

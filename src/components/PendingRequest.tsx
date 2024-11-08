@@ -4,17 +4,17 @@ import {
   LinkReceiveError,
   LinkReceiveSender,
   LinkReceiveStatus,
+  LinkReceiveExpiration,
   LinkReceiveShare
 } from '@prex0/uikit/link-transfer'
 import { UILabel1 } from '@prex0/uikit'
-import { useCallback, useState } from 'react'
+import { useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { getURL } from '../utils'
-import { cn, pressable, text } from '@prex0/uikit/styles'
+import { getFormattedDate, getURL } from '../utils'
 import { PendingCodeModal } from './PendingCodeModal'
+import { Button } from './ui/button'
 
 export const PendingRequest = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate()
 
   const handleSuccess = useCallback(() => {
@@ -35,14 +35,16 @@ export const PendingRequest = () => {
           <UILabel1>Status:</UILabel1>
           <LinkReceiveStatus />
         </div>
+        <div className='flex items-center justify-between'>
+          <UILabel1>Expiration:</UILabel1>
+          <LinkReceiveExpiration format={(timestamp) => getFormattedDate(timestamp)}/>
+        </div>
         <LinkReceiveError />
         <LinkReceiveShare className='py-3'>
-          <button className={cn(pressable.inverse, text.label1, 'rounded-lg h-12 w-full')}>Share</button>
+          <Button className='w-full'>Share</Button>
         </LinkReceiveShare>
 
-        <button className={cn(pressable.inverse, text.label1, 'rounded-lg h-12 w-full')} onClick={() => setIsOpen(true)}>Show Code</button>
-
-        <PendingCodeModal isOpen={isOpen} onRequestClose={() => setIsOpen(false)} />
+        <PendingCodeModal />
       </LinkReceive>
   )
 }
