@@ -6,6 +6,7 @@ import '@prex0/uikit/styles.css';
 import './index.css'
 import { CHAIN_ID } from './constants.ts';
 import { en } from './utils/en';
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <PrexUIKitProvider
