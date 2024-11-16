@@ -26,11 +26,11 @@ export const LinkTransferHistoryItem = (props: LinkTransferHistoryItemCustomComp
     )
   }
   
-  if (item.recipient && item.recipientDisplayName) {
+  if (item.recipient && item.recipientName) {
     return (
       <TableRow>
         <TableCell>
-          <div className="text-sm">Sent to <span className="text-xs text-muted-foreground">{item.recipientDisplayName}</span></div>
+          <div className="text-sm">Sent to <span className="text-xs text-muted-foreground">{item.recipientName}</span></div>
         </TableCell>
         <TableCell>
           <div>
