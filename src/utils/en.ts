@@ -30,6 +30,7 @@ export const en = {
   // Distribute
   DISTRIBUTE_EXCEED_MAX_AMOUNT: 'Already claimed',
   DISTRIBUTE_INVALID_LOCATION: 'Not in the circle',
+  DISTRIBUTE_NO_TOKENS: 'No tokens in distribution request',
   // Status
   STATUS_NOT_FOUND: 'Not found',
   STATUS_PENDING: 'Pending',
