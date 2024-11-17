@@ -1,5 +1,6 @@
 import { Address, MyCode } from '@prex0/uikit/identity'
 import { LogoutWalletButton } from '@prex0/uikit/wallet'
+import { useToast } from '@/hooks/use-toast'
 
 import {
   Dialog,
@@ -14,6 +15,8 @@ import { Button } from './ui/button'
 
 
 export const MyAddressModal = ({className}: {className?: string}) => {
+  const { toast } = useToast()
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -32,7 +35,11 @@ export const MyAddressModal = ({className}: {className?: string}) => {
           <MyCode />
         </div>
         <div className='flex justify-center items-center'>
-          <Address className='cursor-pointer'/>
+          <Address className='cursor-pointer' onCopied={() => {
+            toast({
+              title: 'Copied to clipboard',
+            })
+          }}/>
         </div>
         <DialogFooter>
           <div className='w-full flex justify-center'>
