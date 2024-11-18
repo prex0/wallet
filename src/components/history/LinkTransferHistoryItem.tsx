@@ -12,9 +12,7 @@ export const LinkTransferHistoryItem = (props: LinkTransferHistoryItemCustomComp
 
   const recipientLink =
     item.secret && item.messageId
-      ? `${location.origin}/pending?id=${encodeURIComponent(
-          item.messageId
-        )}&s=${encodeURIComponent(item.secret)}`
+      ? `${location.origin}/pending?s=${encodeURIComponent(item.secret)}`
       : undefined
  
   if(item.status === 'CANCELLED') {
