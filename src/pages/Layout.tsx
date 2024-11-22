@@ -14,16 +14,18 @@ export function Layout() {
 
 
 function NotSupported() {
-  const [seconds, setSeconds] = useState(3);
+  const [seconds, setSeconds] = useState(4);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setSeconds((prev) => prev - 1);
+      if (seconds > 0) {
+        setSeconds((prev) => prev - 1);
+      }
     }, 1000);
 
     const timeout = setTimeout(() => {
       openChrome();
-    }, 3000);
+    }, 4000);
 
     return () => {
       clearInterval(timer);
@@ -35,7 +37,7 @@ function NotSupported() {
     <div className="flex flex-col items-center justify-center h-screen">
       <h1 className="text-2xl font-bold mb-4 text-center">Device not supported</h1>
       <p className="text-center">Please use a device that supports passkeys</p>
-      <p className="text-center">Opening Chrome in {seconds} seconds...</p>
+      {seconds > 0 && <p className="text-center">Opening Chrome in {seconds} seconds...</p>}
       <Button onClick={openChrome}>Open Chrome?</Button>
     </div>
   );
