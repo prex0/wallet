@@ -18,7 +18,7 @@ export const SendForm = () => {
       <RichTransferCard
         token={USDC_TOKEN_ARBITRUM}
         disableTokenSelection
-        amount=""
+        defaultAmount=""
         getURL={getURL}
         onSuccess={() => console.log('success')}
         onCopied={handleCopy}
